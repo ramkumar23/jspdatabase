@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+<title>Employee Details</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script language="javascript">
+function gpayvalue()
+        {
+            document.frm.allow.value=parseInt(document.frm.bpay.value)*20/100 ;
+            document.frm.dedu.value=parseInt(document.frm.bpay.value)*10/100;
+            document.frm.gpay.value=parseInt(document.frm.bpay.value)+parseInt(document.frm.allow.value)-parseInt(document.frm.dedu.value);
+        }
+</script>
+</head>
+<body>
+<form name="frm" method="get" action="http://localhost:8080/WebDataBaseConnectivity/empdetail.jsp">
+<div style="text-align: center">
+<p>Employee Details</p>
+<p>Employee Id<input type="text" name="eid" ></p>
+<p>Employee Name<input type="text" name="ename" ></p>
+<p>Age<input type="text" name="age" ></p>
+<p>Basic Pay<input type="text" name="bpay" onblur="gpayvalue()"></p>
+<p>Allowances<input type="text" name="allow" ></p>
+<p>Deduction<input type="text" name="dedu" ></p>
+<p>Gross Pay<input type="text" name="gpay" ></p>
+<p><input type="submit" name="submit" value="insert">
+<input type="submit" name="submit" value="view"></p>
+</div>
+</form>
+</body>
+</html>
